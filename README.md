@@ -1,6 +1,18 @@
 # Data Nadhi Queue
 
+[![npm version](https://badge.fury.io/js/data-nadhi-queue.svg)](https://badge.fury.io/js/data-nadhi-queue)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/Data-ARENA-Space/data-nadhi-queue/blob/main/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/Data-ARENA-Space/data-nadhi-queue)](https://github.com/Data-ARENA-Space/data-nadhi-queue/issues)
+[![GitHub stars](https://img.shields.io/github/stars/Data-ARENA-Space/data-nadhi-queue)](https://github.com/Data-ARENA-Space/data-nadhi-queue/stargazers)
+
 A cost-effective, scalable queue framework that combines PostgreSQL and object storage (MinIO/S3) to create an intermediate storage system that simulates traditional message queuing at a fraction of the cost of cloud-provided queuing systems.
+
+**🔗 Quick Links:**
+- [📚 Documentation](https://github.com/Data-ARENA-Space/data-nadhi-queue#readme)
+- [🐛 Report Issues](https://github.com/Data-ARENA-Space/data-nadhi-queue/issues)
+- [💡 Request Features](https://github.com/Data-ARENA-Space/data-nadhi-queue/issues/new?template=feature_request.md)
+- [🤝 Contributing](https://github.com/Data-ARENA-Space/data-nadhi-queue/blob/main/CONTRIBUTING.md)
+- [📦 npm Package](https://www.npmjs.com/package/data-nadhi-queue)
 
 ## 🚀 Overview
 
@@ -192,6 +204,14 @@ const queue = new Queue(db, new S3Storage());
 - **Scalability**: Horizontal scaling through database read replicas and distributed storage
 - **Cost**: ~90% cost reduction compared to cloud queuing services for high-volume scenarios
 
+## 🔗 Links & Resources
+
+- **GitHub Repository**: [Data-ARENA-Space/data-nadhi-queue](https://github.com/Data-ARENA-Space/data-nadhi-queue)
+- **npm Package**: [data-nadhi-queue](https://www.npmjs.com/package/data-nadhi-queue)
+- **Report Issues**: [GitHub Issues](https://github.com/Data-ARENA-Space/data-nadhi-queue/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/Data-ARENA-Space/data-nadhi-queue/discussions)
+- **Contributing Guide**: [CONTRIBUTING.md](https://github.com/Data-ARENA-Space/data-nadhi-queue/blob/main/CONTRIBUTING.md)
+
 ## 🔍 Monitoring
 
 Monitor your queue performance by querying the `queue_log` table:
@@ -212,11 +232,11 @@ WHERE status = 'processing'
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+We welcome contributions! Please see our [Contributing Guide](https://github.com/Data-ARENA-Space/data-nadhi-queue/blob/main/CONTRIBUTING.md) for details.
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/Data-ARENA-Space/data-nadhi-queue/blob/main/LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
