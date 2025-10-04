@@ -4,8 +4,8 @@ import { StorageClient } from './storageClient';
 export class Queue {
   constructor(private db: Pool, private storage: StorageClient) {}
 
-  async publish(messageId: string, data: Buffer) {
-    const fileKey = `${messageId}.json`;
+  async publish(messageId: string, data: Buffer, filePath?: string) {
+    const fileKey = filePath ? `${filePath}/${messageId}.json` : `${messageId}.json`;
     await this.storage.upload(fileKey, data);
     await this.db.query(
       `INSERT INTO queue_log (message_id, file_key) VALUES ($1, $2)`,

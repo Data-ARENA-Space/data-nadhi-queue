@@ -47,6 +47,7 @@ Data Nadhi Queue provides a robust queuing solution by separating concerns:
 - **Scalable**: Handle large message payloads without bloating your database
 - **Reliable**: ACID transactions ensure message consistency
 - **Flexible**: Pluggable storage backend (currently supports MinIO, easily extensible to S3, GCS, etc.)
+- **File Organization**: Optional file path organization for better message management and namespace separation
 - **Simple API**: Clean, TypeScript-first interface
 - **Status Tracking**: Built-in job status management (pending → processing → completed)
 
@@ -108,6 +109,10 @@ const messageData = {
 };
 await queue.publish('unique-message-id', Buffer.from(JSON.stringify(messageData)));
 
+// Publish with custom file path (organizes messages in folders)
+await queue.publish('payment-123', Buffer.from(JSON.stringify(messageData)), 'payments/2025');
+// This creates: payments/2025/payment-123.json
+
 // Fetch and process messages
 const job = await queue.fetchNext();
 if (job) {
@@ -132,11 +137,23 @@ new Queue(db: Pool, storage: StorageClient)
 
 #### Methods
 
-##### `publish(messageId: string, data: Buffer): Promise<void>`
+##### `publish(messageId: string, data: Buffer, filePath?: string): Promise<void>`
 Publishes a new message to the queue.
 
 - `messageId`: Unique identifier for the message
 - `data`: Message payload as Buffer
+- `filePath`: Optional path prefix for organizing messages in folders/namespaces
+
+**Examples:**
+```typescript
+// Basic usage
+await queue.publish('msg-001', buffer);
+// Creates: msg-001.json
+
+// With file path organization
+await queue.publish('msg-001', buffer, 'orders/2025/october');
+// Creates: orders/2025/october/msg-001.json
+```
 
 ##### `fetchNext(): Promise<Job | null>`
 Fetches the next pending job from the queue.
