@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 GitHub Discussions
+    url: https://github.com/Data-ARENA-Space/data-nadhi-queue/discussions
+    about: Ask questions and discuss ideas with the community
+  - name: 📚 Documentation
+    url: https://github.com/Data-ARENA-Space/data-nadhi-queue#readme
+    about: Read the project documentation and guides
+  - name: 🔍 Search Issues
+    url: https://github.com/Data-ARENA-Space/data-nadhi-queue/issues
+    about: Search existing issues before creating a new one
